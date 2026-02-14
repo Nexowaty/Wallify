@@ -1,0 +1,57 @@
+{
+    "manifest_version": 3,
+    "name": "Wallify",
+    "version": "1.0",
+    "description": "Set a custom background image for the web.",
+    "permissions": [
+        "storage",
+        "unlimitedStorage",
+        "contextMenus"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "action": {
+        "default_popup": "src/popup.html",
+        "default_icon": {
+            "16": "assets/icon16.png",
+            "48": "assets/icon48.png",
+            "128": "assets/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "src/newtab.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/config.js",
+                "src/effects.js",
+                "src/styles.js",
+                "src/content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "src/help.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
