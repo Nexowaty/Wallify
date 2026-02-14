@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallify</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h1 id="title">Wallify Settings</h1>
+      <button id="helpBtn" title="Help">?</button>
+    </div>
+
+    <div class="upload-section">
+      <label for="fileInput" class="custom-file-upload" id="uploadLabel">
+        Upload Image
+      </label>
+      <input type="file" id="fileInput" accept="image/png, image/jpeg, image/jpg">
+    </div>
+
+    <div class="preview-section">
+      <div id="previewContainer" class="preview-container">
+        <span class="placeholder-text">No image selected</span>
+      </div>
+    </div>
+
+    <div class="options-section">
+      <span id="readableContentLabel" class="option-label">Enable Readable Content</span>
+      <label class="switch">
+        <input type="checkbox" id="readableContentCheckbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="effects-section">
+      <div class="effects-title">Effects</div>
+
+      <div class="effect-row">
+        <span id="labelBrightness" class="effect-label">Brightness</span>
+        <input type="range" id="brightnessInput" min="0" max="200" value="100">
+      </div>
+
+      <div class="effect-row">
+        <span id="labelContrast" class="effect-label">Contrast</span>
+        <input type="range" id="contrastInput" min="0" max="200" value="100">
+      </div>
+
+      <div class="effect-row">
+        <span id="labelSaturation" class="effect-label">Saturation</span>
+        <input type="range" id="saturationInput" min="0" max="200" value="100">
+      </div>
+
+      <div class="effect-row">
+        <span id="labelBlur" class="effect-label">Blur</span>
+        <input type="range" id="blurInput" min="0" max="20" value="0">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="saveBtn" class="btn primary">Save Background</button>
+      <button id="resetBtn" class="btn secondary">Reset to Default</button>
+    </div>
+
+    <div id="status" class="status-msg"></div>
+
+    <div class="language-selector">
+      <select id="langSelect">
+        <option value="en">English</option>
+        <option value="pl">Polski</option>
+        <option value="es">Español</option>
+        <option value="it">Italiano</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>
